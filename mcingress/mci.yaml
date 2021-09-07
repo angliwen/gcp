@@ -1,0 +1,11 @@
+apiVersion: networking.gke.io/v1
+kind: MultiClusterIngress
+metadata:
+  name: region-ingress
+  namespace: xonotic-ui
+spec:
+  template:
+    spec:
+      backend:
+        serviceName: region-mcs
+        servicePort: 8080

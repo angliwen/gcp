@@ -1,0 +1,15 @@
+apiVersion: networking.gke.io/v1
+kind: MultiClusterService
+metadata:
+  name: region-mcs
+  namespace: xonotic-ui
+spec:
+  template:
+    spec:
+      selector:
+        app: xonotic-ui
+      ports:
+      - name: web
+        protocol: TCP
+        port: 80
+        targetPort: 8080
